@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark row justify-content-center ">
+	<div class="container-fluid ">
+		<ul class="nav navbar-nav ">
+			<li routerLinkActive="active" class="nav-item">
+				<a routerLink="dashboard" class="nav-link">A propos du Développeur</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav ">
+			<li routerLinkActive="active" class="nav-item">
+				<a routerLink="books" class="nav-link">Bibliothèque</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav ">
+			<li routerLinkActive="active" class="nav-item">
+				<a routerLink="userlistSpring" class="nav-link">Poker Game</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li routerLinkActive="active" class="nav-item" *ngIf="!isAuth">
+				<a routerLink="auth/signup" class="nav-link">Créer un compte</a>
+			</li>
+			<li routerLinkActive="active" class="nav-item">
+				<a routerLink="auth/signin" class="nav-link" *ngIf="!isAuth">Connexion</a>
+			</li>
+			<li class="nav-item" *ngIf="isAuth">
+				<a class="nav-link" style="cursor: pointer" (click)="onSignOut()">Deconnexion</a>
+			</li>
+			<li class="nav-item" *ngIf="isAuth" class="nav-item">
+				<a class="nav-link text-success">{{ emailUserDisplay }}</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+	

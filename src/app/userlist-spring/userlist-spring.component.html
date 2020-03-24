@@ -1,0 +1,46 @@
+<div class="row justify-content-center text-justify">
+	<div class="col-8">
+		<h2 class="text-center" style="color: #3EA2B7;margin-bottom: 10px;">Poker game</h2>
+		<h4 class="text-center" style="color: #3EA2B7;margin-bottom: 30px;">Liaison d'une API REST Spring à un front Angular</h4>
+		<h6>Le but de ce travail est de consommer une API Spring avec un front Angular. L'API joue le rôle d'interface permettant d'effectuer un lot de requêtes qui retourne des données au format JSON. Le front reçoit alors les données et permet de les afficher.</h6>
+
+		<h5 class="m-3">Techno utilisées :</h5>
+		<ul>
+			<li>Angular 8</li>
+			<li>Spring-boot</li>
+			<li>MySQL</li>
+			<li>Host API Heroku</li>
+			<li>Host Web Google</li>
+		</ul>
+		
+		<p>A terme, cette API sera le point central d'un jeu de Poker tour par tour. Couplée à un DB, elle effectuera toutes les requêtes nécessaires à la création d'un joueur,d'une partie multi-joueurs, au déroulement d'un tour de jeu et à l'utilisation d'un tableau des scores(Leaderboard).</p>
+
+		<p>Ici, la donnée reçu est une liste de joueurs enregistrés.</p>
+
+		<h4><a routerLink="/addUserSpring" class="nav-link">Ajouter un joueur</a></h4>
+
+		<p class="font-italic font-weight-light">Les données peuvent mettre quelques secondes à s'afficher la première fois. L'API est parfois en mode "endormie", il faut la réveiller.</p>
+		<div class="card my-5">
+		  <div class="card-body">
+		    <table class="table table-bordered table-striped">
+		      <thead class="thead-dark">
+		        <tr>
+		          <th scope="col">#</th>
+		          <th scope="col">Firstname</th>
+		          <th scope="col">Lastname</th>
+		          <th scope="col">age</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr *ngFor="let user of users">
+		          <td>{{ user.id }}</td>
+		          <td>{{ user.firstname }}</td>
+		          <td>{{ user.lastname }}</td>
+		          <td>{{ user.age }}</td>
+		        </tr>
+		      </tbody>
+		    </table>
+		  </div>
+		</div>
+	</div>
+</div>

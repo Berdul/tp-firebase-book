@@ -1,0 +1,87 @@
+<div class="row m-3 justify-content-center">
+	<div class="col-sm-10">
+			<h2 class="text-center" style="color: #3EA2B7;margin-bottom: 10px;">Bibliothèque en ligne</h2>
+			<h4 class="text-center" style="color: #3EA2B7;margin-bottom: 30px;">Liaison d'une DB Firebase à un front Angular</h4>
+			<h6 class="text-center">Cette bibliothèque est conçu pour stocker des données venant de l'utilisateur afin d'enregister les livres qu'il aime ou qu'il possède dans sa bibliothèque. </h6>
+
+			<h6 class="m-3">Techno utilisées :</h6>
+			<ul>
+				<li>Angular 8</li>
+				<li>Firebase</li>
+				<li>Host Web Google</li>
+			</ul>
+
+			<p>Ici, la donnée reçu est une liste de livres au format Json. </p>
+	</div>
+</div>
+
+<div class="row m-3">
+	<div class="col-6 text-right">
+		<h2 style="color: #3EA2B7;">Vos livres</h2>
+	</div>
+	<div class="col-6">
+		<button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>
+	</div>
+</div>
+
+
+<div class="list-group">
+	<div class="row p-3 shadow mb-3 bg-white rounded" 
+		 style="border:solid grey 0.5px; border-radius: 5px; box-shadow: " 
+		*ngFor="let book of books; let i = index"
+		(click)="onViewBook(i)">
+
+		<div class="col-sm-10 " >
+			<div class="list-group">
+				<h3 class="list-group-item-heading">
+					{{ book.title }}
+				</h3>
+				<p>
+					{{ book.author }}
+				</p>
+			</div>
+		</div>
+
+		<div class="col-2 text-right" >			
+			<button class="btn btn-danger" (click)="onDeleteBook(book)">
+				Del
+			</button>			
+		</div>
+	</div> 
+</div>
+
+<!-- 
+<div class="row " style="background-color: blue">
+	<div class="col-12">
+		<h2>Vos livres</h2>
+		<button class="btn btn-primary" (click)="onNewBook()">Nouveau livre</button>
+	</div>
+</div>
+
+<div class="" style="background-color: green">
+	
+	<div class="list-group">
+		<button class="row" 
+			*ngFor="let book of books; let i = index"
+			(click)="onViewBook(i)">
+
+			<div class="col-6 " style="background-color: red">
+				<div class="list-group">
+					<h3 class="list-group-item-heading">
+						{{ book.title }}
+						{{ book.author }}
+					</h3>
+				</div>
+
+			</div>
+
+			<div class="col-6 text-right" style="background-color: yellow">			
+				<button class="btn btn-danger" (click)="onDeleteBook(book)">
+					Del
+				</button>			
+			</div>
+		</button> 
+	</div>
+	
+</div>
+-->
